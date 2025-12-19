@@ -1,0 +1,1885 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+    
+
+        .sec3,
+        .sec4,
+        .sec5,
+        .sec6 {
+            border: 1px solid red;
+            height: 100vh;
+        }
+
+        .sec1 {
+            z-index: 10;
+            background-color: white;
+            color: black;
+            padding: 3px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 20vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .sec1b>ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .sec1 i {
+            color: black;
+        }
+
+        .sec2 {
+            color: white;
+            padding: 3px 5%;
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .btn {
+            color: beige;
+            background: white;
+            padding: 10px;
+            border: none;
+            border-radius: 10%;
+        }
+
+        .photo {
+            width: 3%;
+            height: 5%;
+        }
+
+        .box {
+            position: absolute;
+            width: 30%;
+            background: white;
+            right: 10px;
+            display: none;
+            color: white;
+            top: 70px;
+        }
+
+        .box>div {
+            border: 1px solid;
+        }
+
+        @media (max-width: 575px) {
+        .sec1 {
+            flex-direction: row;
+            height: auto;
+            padding: 15px;
+        }
+
+        .sec1b {
+            display: none;
+        }
+        }
+
+        @media (min-width: 576px) and (max-width: 991px) {
+        .sec1 {
+            padding: 20px 5%;
+        }
+
+        .sec1b ul {
+            gap: 15px;
+        }
+        }
+
+        @media (min-width: 992px) {
+        .sec1 {
+            height: 20vh;
+        }
+        }
+
+
+        .sai img {
+            width: 1240px;
+            height: 50vh;
+            padding-left: 400px;
+
+
+        }
+        @media (max-width: 575px) {
+        .sec2a {
+            grid-template-columns: 1fr;
+            margin-left: 0;
+        }
+
+        .sai h1,
+        .sai h2 {
+            font-size: 32px;
+            padding-top: 100px;
+        }
+
+        .sai img {
+            width: 100%;
+            padding-left: 0;
+        }
+        }
+
+        @media (min-width: 576px) and (max-width: 991px) {
+        .sai h1,
+        .sai h2 {
+            font-size: 45px;
+        }
+
+        .sai img {
+            padding-left: 150px;
+        }
+        }
+
+        @media (min-width: 992px) {
+        .sai h1,
+        .sai h2 {
+            font-size: 70px;
+        }
+        }
+
+
+        .sai h1 {
+            position: absolute;
+            padding-top: 200px;
+            font-size: 70px;
+        }
+
+        .sai h2 {
+            position: absolute;
+            padding-top: 280px;
+            font-size: 70px;
+        }
+
+        .sai h4 {
+            position: absolute;
+            padding-top: 380px;
+        }
+
+        .sai i {
+            padding-top: 450px;
+            font-size: 50px;
+            color: aqua;
+        }
+
+        .card {
+            width: 300px;
+            background-color: rgb(185, 247, 249);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 1px;
+            display: inline-block;
+        }
+
+        .card h2 {
+            color: rgb(65, 127, 170);
+
+        }
+
+        .card button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        h4 {
+            color: rgb(0, 120, 170);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 0;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+
+
+        @media (max-width: 575px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+            }
+        }
+
+        @media (min-width: 576px) and (max-width: 991px) {
+        .container {
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 45%;
+        }
+        }
+
+        @media (min-width: 992px) {
+        .card {
+            width: 300px;
+        }
+        }
+
+
+        .akhi {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 100px;
+        }
+
+        /* .medi {
+                color: black;
+                width: 50%;
+                text-align: center;
+                padding: 20px;
+                border-radius: 20px;
+                border: 1px solid black;
+
+            }
+
+            .medi:hover {
+                background: rgb(27, 214, 192);
+            } */
+        .accordion {
+            width: 400px;
+            font-family: Arial, sans-serif;
+        }
+
+        .acc-item {
+            margin-bottom: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f4f4f4;
+        }
+
+        /* Hide checkbox */
+        .acc-item input {
+            display: none;
+        }
+
+        .acc-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            background: #eaeaea;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        /* Content area */
+        .acc-content {
+            max-height: 0;
+            overflow: hidden;
+            background: white;
+            transition: all 0.3s ease;
+            padding: 0 20px;
+        }
+
+        /* When checkbox is checked */
+        .acc-item input:checked+.acc-btn {
+            background: #37e3a2;
+            color: white;
+        }
+
+        .acc-item input:checked+.acc-btn .arrow {
+            transform: rotate(180deg);
+        }
+
+        .acc-item input:checked~.acc-content {
+            max-height: 150px;
+            padding: 15px 20px;
+        }
+
+        .arrow {
+            transition: 0.3s;
+        }
+
+        #cal {
+            font-size: 3rem;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        #clo {
+            font-size: 3rem;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        @media (max-width: 575px) {
+        .akhi {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .akhi img {
+            width: 100%;
+        }
+        }
+
+
+        @media (min-width: 576px) and (max-width: 991px) {
+        .akhi {
+            gap: 40px;
+        }
+        }
+
+        @media (min-width: 992px) {
+        .akhi {
+            flex-direction: row;
+        }
+        }
+
+
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: 0px;
+            padding-left: 150px;
+
+
+
+
+
+        }
+
+        .profile-image img {
+            display: flex;
+            justify-content: space-around;
+
+
+
+
+
+        }
+
+        .profile-info {
+            width: 80%;
+            padding: 20px;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+
+        }
+
+        .title {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: #4caf50;
+
+
+        }
+
+        .para {
+
+            width: 100%;
+
+        }
+
+
+        @media (max-width: 575px) {
+        .profile-container {
+            flex-direction: column;
+            padding-left: 0;
+            text-align: center;
+        }
+        }
+
+        @media (min-width: 576px) and (max-width: 991px) {
+        .profile-container {
+            padding-left: 50px;
+        }
+        }
+
+        @media (min-width: 992px) {
+        .profile-container {
+            flex-direction: row;
+        }
+        }
+
+
+        .des {
+            font-size: rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1em;
+            border-radius: 40px;
+        }
+
+        .btn:hover {
+            background-color: #4caf50;
+        }
+
+        .sec2a {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            margin-left: 50px;
+        }
+
+        .image {
+            top: 0;
+            width: 100%;
+        }
+
+        h5 {
+            color: rgb(60, 152, 190);
+        }
+
+        .how {
+            text-align: center;
+        }
+
+        .how1 {
+            font-size: 2.5rem;
+        }
+
+        .eye {
+            width: 30%;
+        }
+        .cat1{
+            margin-left: 10%;
+            justify-content: space-around;
+            display: grid;
+            grid-template-columns: repeat(3,auto);
+            gap: 40px;
+        }
+        .sec1a{
+            display: flex;
+            align-content:center;
+        }
+         body{
+        font-family: Arial, sans-serif ;
+        margin:0;
+        padding:0;
+        background: #f8fdfc;
+    }
+
+        @media (max-width: 575px) {
+        .cat1 {
+            grid-template-columns: 1fr;
+        }
+        }
+
+        @media (min-width: 576px) and (max-width: 991px) {
+        .cat1 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        }
+
+        @media (min-width: 992px) {
+        .cat1 {
+            
+            grid-template-columns: repeat(3, 1fr);
+        }
+        }
+
+
+    .doghead{
+        text-align: center;
+        padding: 60px 20px;
+    }
+    .doghead h2{
+        margin-top: 0px;
+        font-size: 32px;
+    }
+    .i{
+        font-size: 12px;
+        color: rgba(52, 52, 52, 0.74);
+    }
+    .dog-container{
+        display:flex;
+        justify-content: center;
+        gap:25px;
+        height: 50%;
+        
+    }
+    .dog1{
+        text-align: center;
+        background: #bcf7f18a;
+        width: 270px;
+        border-radius:12px;
+    }
+    .dog2{
+        text-align: center;
+        width: 270px;
+        border-radius:12px;
+    }
+    .dog1 h3
+    .dog2 h3{
+        font-size: 22px;
+    }
+    .price{
+        font-size: 40px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+    .dog1 ul,
+    .dog2 ul {
+        text-align: center;
+        list-style: none;
+        padding: 0;
+        margin: 0 0 25px 0;
+        
+    }
+
+    .dog1 ul li ,
+    .dog2 ul li{
+        padding: 16px 0;
+        border-bottom: 1px #cde5e3;
+        color: #3a3a3a;
+        font-style: italic;
+        font-size: 12px;
+        font-family:'segoe UI';
+    }
+
+        @media (max-width: 575px) {
+        .dog-container {
+            flex-direction: column;
+            align-items: center;
+        }
+        }
+
+        @media (min-width: 576px) and (max-width: 991px) {
+        .dog-container {
+            flex-wrap: wrap;
+        }
+        }
+
+        @media (min-width: 992px) {
+        .dog-container {
+            flex-direction: row;
+        }
+        }
+
+      .get{
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1em;
+            border-radius: 40px;
+            border-bottom: 1px solid transparent
+            
+            
+        }
+
+        .get:hover {
+            background-color:rgba(158, 158, 158, 0.01);
+             border: 3px solid  #0078aa;
+        }
+        .got{
+            background-color: #0078aa;
+            color: black;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1em;
+            border-radius: 40px;
+             border-bottom: 1px solid transparent;
+            
+            
+        }
+
+        .got:hover {
+            background-color:whitesmoke;
+            border: 3px solid  #0078aa;
+        }
+         * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f5f5f5;
+        padding: 40px 20px;
+    }
+
+    .container5 {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+    }
+
+    /* Team Section */
+    .team-section {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .team-card {
+        position: relative;
+        height: 150%;
+        margin-top: 10%;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .card-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #4ecdc4 0%, #44b7b0 100%);
+        z-index: 1;
+    }
+
+    /* Decorative wave shapes */
+    .card-background::before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 200px;
+        height: 200px;
+        background: #5dd9d0;
+        border-radius: 50%;
+        opacity: 0.6;
+    }
+
+    .card-background::after {
+        content: '';
+        position: absolute;
+        top: 50px;
+        left: -80px;
+        width: 180px;
+        height: 180px;
+        background: #2fb8a8;
+        border-radius: 50%;
+        opacity: 0.8;
+    }
+
+    .card-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 30px;
+        color: white;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 4px solid white;
+        object-fit: cover;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .member-name {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .member-title {
+        font-size: 14px;
+        font-weight: 500;
+        opacity: 0.95;
+        margin-bottom: 15px;
+    }
+
+    .member-description {
+        font-size: 13px;
+        line-height: 1.6;
+        opacity: 0.9;
+        margin-bottom: 20px;
+    }
+
+    .rating {
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+        font-size: 48px;
+        font-weight: bold;
+        opacity: 0.3;
+    }
+
+    /* Contact Form Section */
+    .contact-section {
+        display: flex;
+        align-items: center;
+    }
+
+    .contact-form {
+        width: 100%;
+        background: white;
+        padding: 50px;
+        border-radius: 15px;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+        padding-top:-100px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #999;
+        font-size: 13px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: none;
+        border-bottom: 1px solid #e0e0e0;
+        font-family: inherit;
+        font-size: 14px;
+        color: #333;
+        transition: border-color 0.3s ease;
+        background: transparent;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-bottom-color: #4ecdc4;
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        margin-top: 5px;
+    }
+
+    .submit-btn {
+         
+            background-color:#3ce2ad;
+            color: black;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1em;
+            border-radius: 40px;
+            border-bottom: 1px solid transparent;
+            
+            
+        }
+
+        .submit-btn:hover {
+            background-color:aliceblue;
+             border: 3px solid  #0078aa;
+        }
+
+       /* width: 100%;
+        padding: 15px;
+        margin-top: 20px;
+        background: linear-gradient(135deg, #4ecdc4 0%, #44b7b0 100%);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .submit-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4);
+    }
+
+    .submit-btn:active {
+        transform: translateY(-1px);*/
+
+    
+
+    @media (max-width: 768px) {
+        .container5 {
+            grid-template-columns: 1fr;
+            gap: 40px;
+            
+        }
+
+        .team-grid {
+            grid-template-columns: 1fr;
+            height:100vh;
+            
+        }
+
+        .contact-form {
+            margin-top: 10%;
+            padding: 30px;
+        }
+
+        .team-card {
+            height: 400px;
+        }
+    }
+    .john{
+        width:100px;
+        height:100px ;
+    }
+    .kate{
+         width:100px;
+        height:100px ;
+    }
+    
+        body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    
+}
+   body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    
+}
+
+
+.addressmap {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px;
+    color: white;
+    padding: 60px 80px;
+    font-family: "Poppins", sans-serif;
+    background: #151515; 
+    height: auto;
+}
+
+
+.imp h2 {
+    margin-bottom: 20px;
+}
+
+.imp p {
+    line-height: 1.7;
+    color: #d0d0d0;
+}
+
+
+.news h2 {
+    margin-bottom: 25px;
+}
+
+.news-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.img-box {
+    position: relative;
+}
+
+.img-box img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #00c0ff;
+    color: white;
+    font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+h5 {
+    color: #c8c8c8;
+    font-size: 13px;
+    margin: 0;
+}
+
+.title {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #3b3b3b;
+    margin: 15px 0;
+}
+
+
+.map p {
+    margin: 18px 0;
+    font-size: 15px;
+    color: #d0d0d0;
+}
+
+.map i {
+    margin-right: 12px;
+    font-size: 17px;
+    color: white;
+}
+.jevelin{
+    width: 100%;
+    margin-top:-1% ;
+    background-color: gray;
+    text-align: center;
+    height: 5vh;
+}
+   .txt {
+            display: flex;
+            flex-direction: row;
+            gap: 0;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+
+        .txt {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 100px;
+        }
+
+        /* .medi {
+                color: black;
+                width: 50%;
+                text-align: center;
+                padding: 20px;
+                border-radius: 20px;
+                border: 1px solid black;
+
+            }
+
+            .medi:hover {
+                background: rgb(27, 214, 192);
+            } */
+        .boxer {
+            width: 400px;
+            margin-bottom: 10%;
+            font-family: Arial, sans-serif;
+        }
+
+        .txt-item {
+            margin-bottom: 10px;
+            width: 50vw;
+            margin-left: -30%;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f4f4f4;
+        }
+        .txt-item input {
+            display: none;
+        }
+
+        .txt-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            background: #eaeaea;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        .txt-content {
+            max-height: 0;
+            overflow: hidden;
+            background: white;
+            transition: all 0.3s ease;
+            padding: 0 20px;
+        }
+        .txt-item input:checked+.txt-btn {
+            background: #37e3a2;
+            color: white;
+        }
+
+        .txt-item input:checked+.txt-btn .arrow {
+            transform: rotate(180deg);
+        }
+
+        .txt-item input:checked~.txt-content {
+            max-height: 150px;
+            padding: 15px 20px;
+        }
+
+        .arrow {
+            transition: 0.3s;
+        }
+
+        .given{
+            background-color:#3ce2ad;
+            color: black;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1em;
+            border-radius: 40px;
+            border-bottom: 1px solid transparent;
+            
+            
+        }
+
+        .given:hover {
+            background-color:aliceblue;
+             border: 3px solid  #0078aa;
+        }
+
+
+
+        @media (max-width: 575px) {
+        .txt {
+            flex-direction: column;
+        }
+
+        .txt-item {
+            width: 100%;
+            margin-left: 0;
+        }
+        }
+
+        @media (min-width: 576px) and (max-width: 991px) {
+        .txt-item {
+            width: 80%;
+        }
+        }
+
+        @media (min-width: 992px) {
+        .txt {
+            flex-direction: row;
+        }
+        }
+
+        #facts {
+            width: 100%;
+            text-align: center;
+            margin-top: 60px;
+            margin-left: 10%;
+            margin-bottom: 60px;
+            color: white;
+            border-radius: 12px;
+        }
+       
+
+        
+        .facts-box {
+           
+            color: black;
+            width: 80%;
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 50px 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.20);
+            z-index: 10;
+            top: -10px;
+        }
+
+        .fact-item {
+            text-align: center;
+        }
+
+        .fact-item h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color:black;
+            margin-bottom: 10px;
+        }
+
+        .fact-item i {
+            font-size: 26px;
+            color:black;
+            margin-bottom: 10px;
+        }
+
+        .fact-item p {
+            font-size: 16px;
+            color: #444;
+        }
+
+
+
+        @media (max-width: 575px) {
+        .facts-box {
+            grid-template-columns: 1fr;
+        }
+        }
+
+        @media (min-width: 576px) and (max-width: 991px) {
+        .facts-box {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        }
+
+        @media (min-width: 992px) {
+        .facts-box {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        }
+
+   
+
+        .spa{
+            display: flex;
+            justify-content: space-around;
+            background: #e8e8e8;
+            padding: 20px 40px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 1600px;
+            height: 20vh;
+            align-items: center;
+        }
+
+        .spa-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        /* icon placeholder (not used now) */
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Flex row: icon + heading */
+        .spad label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .spad h4 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .text p {
+            margin: 5px 0 0 24px; /* align under heading */
+            font-size: 14px;
+            color: #555;
+        }
+
+        .spad i {
+            color: #3ce2ad;
+        }
+
+        @media (max-width: 575px) {
+        .addressmap {
+            grid-template-columns: 1fr;
+            padding: 40px 20px;
+        }
+        }
+
+        @media (min-width: 576px) and (max-width: 991px) {
+        .addressmap {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        }
+
+        @media (min-width: 992px) {
+        .addressmap {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="sec1">
+        <h1 class="sec1a">JEVELIN</h1>
+
+        <div class="sec1b">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Departments</li>
+                <li>FAQ</li>
+                <li>Contacts</li>
+                <li><i class="fa-brands fa-facebook-f"></i></li>
+                <li><i class="fa-brands fa-twitter"></i></li>
+                <li><i class="fa-solid fa-magnifying-glass"></i></li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <div>home</div>
+            <div>about</div>
+            <div>services</div>
+            <div class="photo">
+                <img src="https://th.bing.com/th?q=F+Logo+Black+and+White&w=120&h=120&c=1&rs=1&qlt=70&o=7&cb=1&dpr=1.3&pid=InlineBlock&rm=3"
+                    alt="">
+                <img src="https://th.bing.com/th/id/OIP.vyhkMafwzVBCCSsgGJfI4wHaHa?w=186&h=186&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                    alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="sec2a" >
+        <div class="sai" data-aos="fade-up-left" ">
+            <h1>Professional</h1>
+            <h2>Family Health Care</h2>
+            <h4>CREATE MEDICAL WEBSITE USING JEVELIN</h4>
+            <div class="sec2b">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <i class="fa-solid fa-suitcase-medical"></i>
+                <i class="fa-solid fa-stethoscope"></i>
+                <img src="home.jpg" alt="" class="image">
+            </div>
+        </div>
+    </div>
+    </div><br><br><br><br>
+
+    <div>
+        <div class="container">
+            <div class="card">
+                <h2>1-800-600-380</h2>
+                <h3>EMERGENCY SERVICE</h3>
+                <p>Aliquam erat volutpat. Nullam imperdiet sapien felis, non lobortis odio mattis in. Quisque dapibus
+                    aliquet dictum. Integer dapibus ullamcorper est, ac</p>
+                <button>See More</button>
+            </div>
+
+            <div class="card">
+                <i class="fa-regular fa-calendar" id="cal"></i>
+                <h3>DO YOU WANT TO MAKE AN APPOINTMENT</h3>
+                <p>Aliquam erat volutpat. Nullam imperdiet sapien felis, non lobortis odio mattis in. Quisque dapibus
+                    aliquet dictum.</p>
+                <button>Book Now</button>
+            </div>
+
+            <div class="card">
+                <i class="fa-regular fa-clock" id="clo"></i>
+                <h3>OPENING HOURS</h3>
+                <p>Monday - Friday</p>
+                <p>Saturday - Sunday</p>
+                <button>Contact Us</button>
+            </div>
+        </div>
+        <div class="akhi">
+            <div class="left-section">
+                <img src="https://jevelin.shufflehound.com/medical/wp-content/uploads/sites/23/2018/09/Layer-1200.png"
+                    alt="">
+            </div>
+            <div class="bha" data-aos="fade-left">
+                <h1>About Jevelin Clinic</h1>
+                <h4>PROFESSIONAL CARE</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus orci ex, <br>
+                    pulvinar nec finibus ut, cursus eget libero. In dictum sem non sapien <br>
+                    condimentum aliquet. Nulla facilisi. Mauris efficitur dolor dolor, id porta nulla <br>
+                    interdum vitae.</p>
+                <div>
+                    <div class="accordion">
+
+                        <div class="acc-item">
+                            <input type="checkbox" id="acc1" checked>
+                            <label for="acc1" class="acc-btn">
+                                <span>Medical Consulting</span>
+                                <i class="fa-solid fa-angle-down" class="arrow"></i>
+                            </label>
+                            <div class="acc-content">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra,
+                                    urna non pellentesque sollicitudin, felis lorem porta nibh, suscipit
+                                    lacinia ante augue venenatis nibh.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <input type="checkbox" id="acc2">
+                            <label for="acc2" class="acc-btn">
+                                <span>Laboratory Analysis</span>
+                                <i class="fa-solid fa-angle-down" class="arrow"></i>
+                                
+                            </label>
+                            <div class="acc-content">
+                                <p>
+                                    Laboratory testing and analysis services for accurate diagnosis and care.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="acc-item">
+                            <input type="checkbox" id="acc3">
+                            <label for="acc3" class="acc-btn">
+                                <span>Diagnostic Clinic</span>
+                                <i class="fa-solid fa-angle-down" class="arrow"></i>
+                               
+                            </label>
+                            <div class="acc-content">
+                                <p>
+                                    Advanced diagnostic clinic services with modern medical equipment.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <div class="cat">
+            <div class="how">
+                <h2 class="how1">How we can help you</h2><br><br>
+                <p>READ MORE ABOUT OUR SERVICES</p>
+
+            </div><br><br>
+            <div class="cat1">
+                <div>
+                    <img src="https://jevelin.shufflehound.com/medical/wp-content/uploads/sites/23/2018/09/icon3_0004_%EF%81%AE.jpg"
+                        alt="" class="eye">
+                    <h4>Ophthalmology</h4><br>
+                    <p>Lorem ipsum dolor sit amet, consectetur <br>
+                        adipiscing elit. Mauris eleifend, orci sed egestas <br>
+                        faucibus, leo sapien laoreet massa, feugiat</p>
+                </div>
+
+                <div>
+                    <img src="https://jevelin.shufflehound.com/medical/wp-content/uploads/sites/23/2018/09/icon3_0005_%EF%88%9E.jpg"
+                        alt="" class="eye">
+                    <h4>Cardiology</h4><br>
+                    <p>Lorem ipsum dolor sit amet, consectetur <br>
+                        adipiscing elit. Mauris eleifend, orci sed egestas <br>
+                        faucibus, leo sapien laoreet massa, feugiat</p>
+                </div>
+
+                <div>
+                    <img src="https://jevelin.shufflehound.com/medical/wp-content/uploads/sites/23/2018/09/icon3_0003_%EF%83%B0.jpg"
+                        alt="" class="eye">
+                    <h4>Dentistry</h4><br>
+                    <p>Lorem ipsum dolor sit amet, consectetur <br>
+                        adipiscing elit. Mauris eleifend, orci sed egestas <br>
+                        faucibus, leo sapien laoreet massa, feugiat</p>
+                </div>
+
+                <div>
+                    <img src="https://jevelin.shufflehound.com/medical/wp-content/uploads/sites/23/2018/09/icon3_0002_%EF%89%8E.jpg"
+                        alt="" class="eye">
+                    <h4>Laboratory</h4><br>
+                    <p>Lorem ipsum dolor sit amet, consectetur <br>
+                        adipiscing elit. Mauris eleifend, orci sed egestas <br>
+                        faucibus, leo sapien laoreet massa, feugiat</p>
+                </div>
+
+                <div>
+                    <img src="https://jevelin.shufflehound.com/medical/wp-content/uploads/sites/23/2018/09/icon3_0001_%EF%83%B1.jpg"
+                        alt="" class="eye">
+                    <h4>Pediatrics</h4><br>
+                    <p>Lorem ipsum dolor sit amet, consectetur <br>
+                        adipiscing elit. Mauris eleifend, orci sed egestas <br>
+                        faucibus, leo sapien laoreet massa, feugiat</p>
+                </div>
+
+                <div>
+                    <img src="https://jevelin.shufflehound.com/medical/wp-content/uploads/sites/23/2018/09/icon3_0000_%EF%88%9D.jpg"
+                        alt="" class="eye">
+                    <h4>Radiology</h4><br>
+                    <p>Lorem ipsum dolor sit amet, consectetur <br>
+                        adipiscing elit. Mauris eleifend, orci sed egestas <br>
+                        faucibus, leo sapien laoreet massa, feugiat</p>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="profile-container">
+        <div class="profile-info"  data-aos="fade-right">
+            <h1 class="name">Jenna Berg</h1>
+            <h5 class="title" style="color: #151515;">PROFESSIONAL DENTIST</h5 >
+            <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>
+                Vivamus orci ex, pulvinar nec finibus ut, cursus eget <br>
+                libero. In dictum sem.</p>
+            <p class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus orci <br>
+                ex, pulvinar nec finibus ut, cursus eget libero. In dictum sem non <br>
+                sapien condimentum aliquet. Nulla facilisi. Mauris efficitur dolor <br>
+                id porta nulla interdum vitae.</p>
+            <button class="btn">View All Doctors</button>
+        </div>
+
+
+        <div class="jeena">
+            <img src="https://jevelin.shufflehound.com/medical/wp-content/uploads/sites/23/2018/09/Layer-1186-copy.jpg" 
+                alt="">
+        </div>
+
+    </div>
+
+    <div id="facts">
+           <div class="facts-box">
+
+                <div class="fact-item">
+                    <h1 class="count" data-target="52">0</h1>
+                    <p>__</p>
+                    <p>Certified </p>
+                    <P>Doctors</P>
+                </div>
+
+                <div class="fact-item">
+                    <h1 class="count" data-target="47">0</h1>
+                    <p>__</p>
+                     <p>Medical</p>
+                    <p>Servies</p>
+                </div>
+
+                <div class="fact-item">
+                    <h1 class="count" data-target="11">0</h1>
+                    <p>__</p>
+                    <p>Different</p>
+                    <p>Affiliates</p>
+                </div>
+
+                
+                <div class="fact-item">
+                    <h1 class="count" data-target="95">0</h1>
+                    <p>__</p>
+                    <p>Offered</p>
+                    <p>Programs</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    <script>
+
+         
+        const counters = document.querySelectorAll('.count');
+        let started = false;
+
+        function startCounting() {
+            const section = document.querySelector("#facts");
+            const rect = section.getBoundingClientRect();
+
+            if (!started && rect.top < window.innerHeight - 100) {
+                counters.forEach(counter => {
+                    let target = +counter.getAttribute("data-target");
+                    let count = 0;
+                    let speed = target / 100;
+
+                    let update = setInterval(() => {
+                        count += speed;
+                        counter.textContent = Math.ceil(count);
+
+                        if (count >= target) clearInterval(update);
+                    }, 20);
+                });
+
+                started = true;
+            }
+        }
+
+        window.addEventListener("scroll", startCounting);
+
+    </script>
+    <div class="doghead">
+        <h2> Our Special Offers</h2>
+        <p class="i"> START TO BE HEALTHY TODAY</p>
+        </div>
+        <section class="offers">
+            <div class="dog-container">
+                <div class="dog1">
+                    <h3>Allergy Check</h3>
+                    <div class="price">$255</div>
+                    <p> 10 treatment</p>
+                    <ul>
+                        <li>Allergy Test</li>
+                        <li>Consultation</li>
+                        <li> Treatments</li>
+                        <li> 10 procedures</li>
+                        <li>       X     </li>
+                        <li> Test Results</li>
+                    </ul>
+                    <button class="get"> Get Now</button>
+                </div>
+                <div class="dog2">
+                     <h3>Eye Checkup</h3>
+                    <div class="price">$108</div>
+                    <p> 3 treatment</p>
+                    <ul>
+                        <li>Refraction</li>
+                        <li>Retinal Examination</li>
+                        <li>External examination</li>
+                        <li> 9 procedures</li>
+                        <li>       X       </li>
+                        <li>Full closure</li>
+                    </ul>
+                    <button class="got"> Get Now</button>
+                </div> 
+                <div class="dog1">
+                    <h3>Dental Care</h3>
+                    <div class="price">$320</div>
+                    <p>6 treatment</p>
+                    <ul>
+                        <li>Gum Care</li>
+                        <li>Consultation</li>
+                        <li> Treatments</li>
+                        <li>6 procedures</li>
+                        <li>Oral Hygiene</li>
+                        <li>Full Closure</li>
+                    </ul>
+                    <button class="get"> Get Now</button>
+                </div> 
+                </div>
+            </div>
+        </section>
+        <br>
+        <br>
+
+    <div class="txt">
+            <div class="left-section">
+               <h1>Frequently Asked</h1>
+               <h1>Questions</h1>
+                <button class="given">View All</button>
+            </div>
+            
+                    <div class="boxer">
+
+                        <div class="txt-item">
+                            <input type="checkbox" id="txt1" checked>
+                            <label for="txt1" class="txt-btn">
+                                <span>How to make an appointment?</span>
+                                <i class="fa-solid fa-angle-down" class="arrow"></i>
+                            </label>
+                            <div class="txt-content">
+                                <p>
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vestibulum lacinia turpis, ut <br>
+                                  facilisis sapien lacinia eget. Cras interdum ligula elit, maximus molestie ex placerat non. Donec <br>
+                                  nec venenatis tortor. In nibh magna, lobortis in urna vitae, tempus ultricies ante. Duis lectus <br>
+                                  felis, blandit eu massa sollicitudin, ornare convallis neque.
+                                </p> 
+                                
+                            </div>
+                        </div>
+
+                        <div class="txt-item">
+                            <input type="checkbox" id="txt2">
+                            <label for="txt2" class="txt-btn">
+                                <span>What will my insurance cover for me?</span>
+                                <i class="fa-solid fa-angle-down" class="arrow"></i>
+                                
+                            </label>
+                            <div class="txt-content">
+                                <p>
+                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vestibulum lacinia turpis, ut <br>
+                                   facilisis sapien lacinia eget. Cras interdum ligula elit, maximus molestie ex placerat non. Donec <br>
+                                   nec venenatis tortor. In nibh magna, lobortis in urna vitae, tempus ultricies ante. Duis lectus <br>
+                                   felis, blandit eu massa sollicitudin, ornare convallis neque. Curabitur venenatis nisl nisi, vel <br>
+                                   varius turpis tempor vulputate. Aenean vulputate enim sit amet nunc consequat euismod. 
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="txt-item">
+                            <input type="checkbox" id="txt3">
+                            <label for="txt3" class="txt-btn">
+                                <span>Is there a parking place next to the clinic?</span>
+                                <i class="fa-solid fa-angle-down" class="arrow"></i>
+                                
+                            </label>
+                            <div class="txt-content">
+                                <p>
+                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vestibulum lacinia turpis, ut <br>
+                                   facilisis sapien lacinia eget. Cras interdum ligula elit, maximus molestie ex placerat non. Donec <br>
+                                   nec venenatis tortor. In nibh magna, lobortis in urna vitae, tempus ultricies ante. Duis lectus <br>
+                                   felis, blandit eu massa sollicitudin, ornare convallis neque. Curabitur venenatis nisl nisi, vel <br>
+                                   varius turpis tempor vulputate. Aenean vulputate enim sit amet nunc consequat euismod. 
+                                </p>
+                            </div>
+                        </div>
+
+                         <div class="txt-item">
+                            <input type="checkbox" id="txt4">
+                            <label for="txt4" class="txt-btn">
+                                <span>How can i make a home appointment?</span>
+                                <i class="fa-solid fa-angle-down" class="arrow"></i>
+                               
+                            </label>
+                            <div class="txt-content">
+                                <p>
+                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vestibulum lacinia turpis, ut <br>
+                                   facilisis sapien lacinia eget. Cras interdum ligula elit, maximus molestie ex placerat non. Donec <br>
+                                   nec venenatis tortor. In nibh magna, lobortis in urna vitae, tempus ultricies ante. Duis lectus <br>
+                                   felis, blandit eu massa sollicitudin, ornare convallis neque. Curabitur venenatis nisl nisi, vel <br>
+                                   varius turpis tempor vulputate. Aenean vulputate enim sit amet nunc consequat euismod. 
+                                </p>
+                            </div>
+                        </div>
+
+                    
+                
+
+
+
+            </div>
+
+     </div>
+      <div class="spa">
+
+        <div class="spa-item">
+            <div class="spad">
+                <div class="spad label">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>ADDRESS</h4>
+                </div>
+                <p>Street number 5, Town, Country</p>
+            </div>
+        </div>
+
+        <div class="spa-item">
+            <div class="spad">
+                <div class="spad label">
+                    <i class="fa-regular fa-clock"></i>
+                    <h4>WORK HOURS</h4>
+                </div>
+                <p>Mon. – Fri. 11AM – 19PM</p>
+            </div>
+        </div>
+
+        <div class="spa-item">
+            <div class="spad">
+                <div class="spad label">
+                    <i class="fa-regular fa-envelope"></i>
+                    <h4>E-MAIL</h4>
+                </div>
+                <p>brandname@company.com</p>
+            </div>
+        </div>
+
+        <div class="spa-item">
+            <div class="spad">
+                <div class="spad label">
+                    <i class="fa-solid fa-phone"></i>
+                    <h4>TELEPHONE</h4>
+                </div>
+                <p>(+371) 512 566 921</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container5">
+        
+        <section class="team-section">
+            <div class="team-grid">
+               
+                <div class="team-card">
+                    <div class="card-background"></div>
+                    <div class="card-content">
+                        <img src="https://jevelin.shufflehound.com/medical/wp-content/uploads/sites/23/2018/09/beard-blurred-background-casual-842811.png" class="john" alt="">
+                        <h3 class="member-name">John Doe</h3>
+                        
+                        <p class="member-title">Geology Teacher</p>
+                        <p class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                            sapien leo, laciulis rutrum lacus sed, fermentum tempor odio.</p>
+                        <div class="rating">99</div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="card-background"></div>
+                    <div class="card-content">
+                        <img src="https://jevelin.shufflehound.com/medical/wp-content/uploads/sites/23/2018/09/matheus-ferrero-346656-unsplash.png" class="kate" alt="">
+                       
+                        <h3 class="member-name">Kate Blossom</h3>
+                        <p class="member-title">Gardener</p>
+                        <p class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                            sapien leo, laciulis rutrum lacus sed, fermentum tempor odio.</p>
+                        <div class="rating">99</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <form class="contact-form">
+                <div class="form-group">
+                    <h1>Make An Appointment</h1>
+                    <h5>AND WE WILL CONTACT YOU</h5>
+                    <br>
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" placeholder="dd-mm-yyyy">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option>Select a subject</option>
+                        <option>Ophthalmology</option>
+                        <option>Cardiology</option>
+                        <option>Dentistry</option>
+                        <option>Laboratory</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">Buy Now</button>
+            </form>
+        </section>
+    </div>
+
+      <div class="addressmap">
+
+                 <div class="imp">
+                       <h2>Important Information</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                         Maecenas vestibulum lacinia turpis, ut facilisis sapien 
+                         lacinia eget. Cras interdum ligula elit, maximus molestie 
+                         ex placerat non.</p>
+                </div>
+
+    
+                 <div class="news">
+                     <h2>Latest News</h2>
+
+        
+                      <div class="news-item">
+                           <div class="img-box">
+                                 <img src="Screenshot 2025-12-11 163909.png" alt="">
+                                 <span class="badge">0</span>
+                             </div>
+
+                          <div>
+                            <h5>NEWS</h5>
+                             <p class="title">Welcome to our new building</p>
+                          </div>
+                     </div>
+
+        <hr>
+
+                       <div class="news-item">
+                           <div class="img-box">
+                              <img src="Screenshot 2025-12-11 164139.png" alt="">
+                              <span class="badge">0</span>
+                          </div>
+
+                       <div>
+                          <h5>DIET</h5>
+                            <p class="title">Healthier diet for better future</p>
+                        </div>
+                  </div>
+
+    </div>
+
+    
+    <div class="map">
+
+        <p><i class="fa-regular fa-map"></i> Street number 5, Town, Country</p>
+        <p><i class="fa-solid fa-phone"></i> (+371) 512 566 921</p>
+        <p><i class="fa-regular fa-envelope"></i> brandname@company.com</p>
+        <p><i class="fa-regular fa-clock"></i> Mon. – Fri. 11AM – 19PM</p>
+
+    </div>
+
+
+
+</div>
+    <div class="jevelin">
+    <p>Copyright © 2017 JevelinTheme - Theme by Shufflehound</p>
+    </div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+
+</html>
